@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+<div class="panel panel-primary">
+  <div class="panel-heading"><p class="panel-title"><%= @listing.title %></p>
+</div>
+  <div class="panel-body">
+<p>
+  <strong>Description:</strong>
+  <%= @listing.description %>
+</p>
+
+<p>
+  <strong>Where:</strong>
+  <%= @listing.location %>
+</p>
+
+<p>
+  <strong>When:</strong>
+  <%= @listing.date %>
+</p>
+
+<p>
+  <strong>Contact:</strong>
+  <%= @listing.contact %>
+</p>
+
+</div>
+  <div class="panel-footer">
+
+<%= link_to 'Edit', edit_listing_path(@listing) %> |
+<%= link_to 'Back', listings_path %>
+</div>
+</div>

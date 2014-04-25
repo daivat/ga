@@ -1,4 +1,4 @@
-<%= form_for(@listing) do |f| %>
+<%= form_for @listing, html: { multipart: true } do |f| %>
   <% if @listing.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(@listing.errors.count, "error") %> prohibited this listing from being saved:</h2>
@@ -13,23 +13,27 @@
 
   <div class="form-group">
     <%= f.label :title %>
-    <%= f.text_field :title, autofocus: true, placeholder: "Title of the event or demo", class: "form-control" %>
+    <%= f.text_field :title, presence: true, autofocus: true, placeholder: "Title of the event or demo", class: "form-control" %>
   </div>
   <div class="form-group">
     <%= f.label :description %>
-    <%= f.text_field :description, placeholder: "Details of the event or demo", class: "form-control" %>
+    <%= f.text_field :description, presence: true, placeholder: "Details of the event or demo", class: "form-control" %>
   </div>
   <div class="form-group">
     <%= f.label :"Where" %>
-    <%= f.text_field :location, placeholder: "Address of the event or demo", class: "form-control" %>
+    <%= f.text_field :location, presence: true, placeholder: "Address of the event or demo", class: "form-control" %>
   </div>
   <div class="form-group">
     <%= f.label :"When" %>
-    <%= f.text_field :date, placeholder: "Date & time for your event or demo", class: "form-control" %>
+    <%= f.text_field :date, presence: true, placeholder: "Date & time for your event or demo", class: "form-control" %>
   </div>
   <div class="form-group">
     <%= f.label :contact %>
-    <%= f.text_field :contact, placeholder: "Your contact details", class: "form-control" %>
+    <%= f.text_field :contact, presence: true, placeholder: "Your contact details", class: "form-control" %>
+  </div>
+  <div class="form-group">
+    <%= f.label :image %>
+    <%= f.file_field :image, class: "form-control" %>
   </div>
   <div class="actions">
     <%= f.submit class: "btn btn-info" %>

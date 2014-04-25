@@ -1,8 +1,8 @@
-<p id="notice"><%= notice %></p>
 <div class="panel panel-primary">
   <div class="panel-heading"><p class="panel-title"><%= @listing.title %></p>
 </div>
   <div class="panel-body">
+    <%= image_tag @listing.image.url(:medium), class: "img-responsive", alt: "Responsive image" %>
 <p>
   <strong>Description:</strong>
   <%= @listing.description %>

@@ -25,8 +25,9 @@
 
 </div>
   <div class="panel-footer">
-
-<%= link_to 'Edit', edit_listing_path(@listing) %> |
+<% if listing.user == current_user %>
+  %= link_to 'Edit', edit_listing_path(@listing) %> |
+<% end %>
 <%= link_to 'Back', listings_path %>
 </div>
 </div>

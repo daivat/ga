@@ -1,5 +1,7 @@
 class ListingsController < ApplicationController
   before_action :set_listing, only: [:show, :edit, :update, :destroy]
+  before_action  :correct_user, only: [:edit, :update, :destroy]
+  before_action :authenticate_user!, except: [:index, :show]
 
   # GET /listings
   # GET /listings.json
@@ -67,6 +69,10 @@ class ListingsController < ApplicationController
       @listing = Listing.find(params[:id])
     end
 
+    def correct_user
+      @listing = current_user.listings.find_by(id: params[:id])
+      redirect_to listings_path, notice: "You are not authorized to edit this listing." if @listing.nil?
+    end
     # Never trust parameters from the scary internet, only allow the white list through.
     def listing_params
       params.require(:listing).permit(:title, :description, :location, :contact, :date, :image)

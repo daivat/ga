@@ -3,7 +3,7 @@
 <h1>Listings</h1>
 <% @listings.each do |listing| %>
       <div class="box panel panel-default">
-          <%= image_tag listing.image.url(:medium) %>
+         <%= image_tag listing.image.url(:medium) %>
           <div class="panel-body">
             <%= listing.title %><br />
             <%= listing.user.email %><br />

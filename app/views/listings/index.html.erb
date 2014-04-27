@@ -1,9 +1,9 @@
 <div id="listings" class="transitions-enabled">
   <% @listings.each do |listing| %>
       <div class="box panel panel-default">
-         <%= image_tag listing.image.url(:medium) %>
+         <%= link_to image_tag(listing.image.url(:medium)), listing %>
           <div class="panel-body">
-            <strong><%= listing.title %></strong><br />
+            <strong><%= link_to listing.title, listing %></strong><br />
             <%= listing.user.email %><br />
             <!--<strong>Description:</strong><%= listing.description %>-->
             <strong>Where:</strong><%= listing.location %><br />
@@ -13,10 +13,10 @@
             <% end %>
           </div>
           <div class="panel-footer">
-            <%= link_to 'Show', listing %>
+            <!--<%= link_to 'Show', listing %>-->
             <% if listing.user == current_user %>
-            <%= link_to 'Edit', edit_listing_path(listing) %>
-            <%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure you would like to delete this listing?' } %>
+              <span class="glyphicon glyphicon-edit"><%= link_to 'Edit', edit_listing_path(listing) %>
+            <span class="glyphicon glyphicon-remove"></span><%= link_to 'Delete', listing, method: :delete, data: { confirm: 'Are you sure you would like to delete this listing?' } %>
             <% end %>
           </div>
       </div>

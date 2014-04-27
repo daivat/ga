@@ -1,12 +1,12 @@
-<!--<div id="listings" class="transitions-enabled">
+<div id="listings" class="transitions-enabled">
   <% @listings.each do |listing| %>
       <div class="box panel panel-default">
          <%= image_tag listing.image.url(:medium) %>
           <div class="panel-body">
             <strong><%= listing.title %></strong><br />
-            <%= listing.user.email %><br />-->
+            <%= listing.user.email %><br />
             <!--<strong>Description:</strong><%= listing.description %>-->
-            <!--<strong>Where:</strong><%= listing.location %><br />
+            <strong>Where:</strong><%= listing.location %><br />
             <strong>When:</strong><%= listing.date %><br />
             <% if user_signed_in? %>
               <strong>When:</strong><%= listing.contact %><br />
@@ -21,4 +21,4 @@
           </div>
       </div>
   <% end %>
-</div>-->
+</div>

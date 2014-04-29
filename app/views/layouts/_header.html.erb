@@ -17,7 +17,14 @@
       <li><%= link_to "Home", root_path %></li>
       <li><%= link_to "About", about_path %></li> 
       <li><%= link_to "Contact", contact_path %></li> 
-      <li><%= link_to 'Create New Listing', new_listing_path, class: "btn btn-info" %></li>
+      
+      <li><button type="button" class="btn btn-default navbar-btn">
+            <%= link_to new_listing_path do %>
+              <span class="glyphicon glyphicon-plus"></span> Create New Listing
+            <% end %>
+            </button>
+      </li>
+
       <% if user_signed_in? %>
         <li><%= link_to "Account Settings", edit_user_registration_path %></li> 
         <li><%= link_to "Logout", destroy_user_session_path, method: :delete %></li> 

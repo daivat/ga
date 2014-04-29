@@ -1,3 +1,5 @@
+<%= render 'pages/home' if !user_signed_in? %>
+
 <div id="listings" class="transitions-enabled">
   <% @listings.each do |listing| %>
       <div class="box panel panel-default">
@@ -15,8 +17,16 @@
           <div class="panel-footer">
             <!--<%= link_to 'Show', listing %>-->
             <% if listing.user == current_user %>
-              <span class="glyphicon glyphicon-edit"><%= link_to 'Edit', edit_listing_path(listing) %>
-            <span class="glyphicon glyphicon-remove"></span><%= link_to 'Delete', listing, method: :delete, data: { confirm: 'Are you sure you would like to delete this listing?' } %>
+              <%= link_to edit_listing_path(listing) do %>
+              <span class="glyphicon glyphicon-edit"></span>
+              Edit
+            <% end %>
+            
+            <%= link_to listing, method: :delete, data: { confirm: 'Are you sure you would like to delete this listing?' } do %>
+              <span class="glyphicon glyphicon-trash"></span>
+              Delete
+            <% end %>
+
             <% end %>
           </div>
       </div>

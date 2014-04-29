@@ -17,7 +17,7 @@
           </div>
          
             <!--<%= link_to 'Show', listing %>-->
-            <% if listing.user == current_user %>
+            <% if current_user && listing.user == current_user %>
              <div class="panel-footer">
               <%= link_to edit_listing_path(listing) do %>
               <span class="glyphicon glyphicon-edit"></span>

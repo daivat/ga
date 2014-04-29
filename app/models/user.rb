@@ -4,6 +4,6 @@ class User < ActiveRecord::Base
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :trackable, :validatable
 
-  has_many :listings
+  has_many :listings, dependent: :destroy
   validates :name, presence: true, length: { in: 4..15 }
 end

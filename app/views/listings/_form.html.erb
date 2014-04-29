@@ -4,8 +4,8 @@
       <h2><%= pluralize(@listing.errors.count, "error") %> prohibited this listing from being saved:</h2>
 
       <ul>
-      <% @listing.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+      <% @listing.errors.full_messages.each do |messages| %>
+        <li><%= messages %></li>
       <% end %>
       </ul>
     </div>

@@ -5,4 +5,5 @@ class User < ActiveRecord::Base
          :recoverable, :rememberable, :trackable, :validatable
 
   has_many :listings
+  validates :name, presence: true, length: { in: 4..15 }
 end

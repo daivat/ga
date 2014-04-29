@@ -7,7 +7,7 @@
           <div class="panel-body">
             <%= image_tag @listing.image.url(:medium), class: "center", alt: "Responsive image" %>
             <ul class="list-group">
-                <br/><li class="list-group-item"><p><strong>User: </strong><%= @listing.user.email %></li>
+                <br/><li class="list-group-item"><p><strong>Listing by: </strong><%= @listing.user.name %></li>
                 <li class="list-group-item"><p><strong>Description: </strong><%= @listing.description %></li>
 
                 <li class="list-group-item"><p><strong>Where: </strong><%= @listing.location %></li>

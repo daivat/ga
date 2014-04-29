@@ -1,6 +1,6 @@
 <%= render 'pages/home' if !user_signed_in? %>
 
-<div id="listings" class="transitions-enabled">
+<div id="listings" class="transitions-enabled infinite-scroll">
   <% @listings.each do |listing| %>
       <div class="box panel panel-default">
          <%= link_to image_tag(listing.image.url(:medium)), listing %>
@@ -13,6 +13,7 @@
             <% if user_signed_in? %>
               <strong>When:</strong><%= listing.contact %><br />
             <% end %>
+
           </div>
          
             <!--<%= link_to 'Show', listing %>-->
@@ -32,4 +33,7 @@
           
       </div>
   <% end %>
+</div>
+<div class="center">
+  <%= will_paginate @posts, renderer: BootstrapPagination::Rails %>
 </div>

@@ -7,4 +7,10 @@ class PagesController < ApplicationController
 
   def Contact
   end
+
+  def Privacy
+  end
+
+  def tos
+  end
 end

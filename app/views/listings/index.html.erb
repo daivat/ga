@@ -5,15 +5,18 @@
       <div class="box panel panel-default">
          <%= link_to image_tag(listing.image.url(:medium)), listing %>
           <div class="panel-body">
+            <div class = "center" style ="font-size:14px;text-decoration:none;">
             <strong><%= link_to listing.title, listing %></strong><br />
+          </div>
+          <div class="well" style="margin-left:-13.5px; margin-right:-13.5px;margin-bottom:-10px;background-color:white;">
             <strong>Listing by: </strong><%= listing.user.name %><br />
             <!--<strong>Description:</strong><%= listing.description %>-->
             <strong>Where: </strong><%= listing.location %><br />
             <strong>When: </strong><%= listing.date %><br />
             <% if user_signed_in? %>
-              <strong>When: </strong><%= listing.contact %><br />
+              <strong>Contact: </strong><%= listing.contact %>
             <% end %>
-
+            </div>
           </div>
          
             <!--<%= link_to 'Show', listing %>-->

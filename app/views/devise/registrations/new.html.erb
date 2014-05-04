@@ -20,6 +20,7 @@
 
 		  <div class="form-group"><%= f.submit "Sign up", class: "btn btn-primary" %></div>
 		<% end %>
+		<p> By signing up, I agree to GlassAngle's <%= link_to "Terms of Service", tos_path %> and <%= link_to "Privacy Policy", privacy_path %>.</p>
 	</div>
 		<div class="panel-footer">
 			<%= render "devise/shared/links" %>

@@ -92,6 +92,8 @@ GEM
     pg (0.17.1)
     polyglot (0.3.4)
     rack (1.5.2)
+    rack-ssl (1.4.1)
+      rack
     rack-test (0.6.2)
       rack (>= 1.0)
     rails (4.1.0)
@@ -168,6 +170,7 @@ DEPENDENCIES
   masonry-rails (~> 0.2.0)
   paperclip!
   pg
+  rack-ssl (~> 1.4.1)
   rails (= 4.1.0)
   rails_12factor
   sass-rails (~> 4.0.3)

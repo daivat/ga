@@ -22,5 +22,6 @@ module Glassangle
     # Required for Heroku
     config.assets.initialize_on_precompile = false
     config.force_ssl = true
+    config.middleware.insert_before ActionDispatch::Static, Rack::SSL, :exclude => proc { |env| env['HTTPS'] != 'on' }
   end
 end

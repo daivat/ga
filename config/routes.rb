@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   resources :listings
 
-  devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
   root "listings#index"
   get "about" => "pages#about"
   get "contact" => "pages#contact"

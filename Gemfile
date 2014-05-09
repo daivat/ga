@@ -29,6 +29,8 @@ gem 'spring',        group: :development
 gem 'bootstrap-sass'
 
 gem 'devise', '~> 3.2.4'
+gem 'omniauth'
+gem 'omniauth-google-oauth2' 
 
 gem 'paperclip', github: 'thoughtbot/paperclip'
 gem 'aws-sdk','~> 1.39.0'

@@ -12,6 +12,10 @@ Devise.setup do |config|
   # with default "from" parameter.
   config.mailer_sender = 'support@glassangle.com'
 
+  require 'omniauth-google-oauth2'
+  config.omniauth :google_oauth2, "329208159949-tudh1u7rq3hjfmuihv0mikkt83hl9b67.apps.googleusercontent.com", "-SpKN-h0kGaspt3gW-PjDLmM", { access_type: "offline", approval_prompt: "" }
+
+
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 
